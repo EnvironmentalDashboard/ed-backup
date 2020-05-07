@@ -9,7 +9,8 @@ end
 
 get "/" do
   settings.scheduler.in '10s' do
-    File.write('test', Time.now)
+    puts "Attempting to run"
+    system("bash scripts/uploads.sh")
   end
 
   "Hi!!!"
