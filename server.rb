@@ -9,7 +9,7 @@ end
 
 get "/" do
   settings.scheduler.in '10s' do
-    puts "Attempting to run"
+    puts "Backing up uploads"
     system("bash scripts/uploads.sh")
   end
 
