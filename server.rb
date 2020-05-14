@@ -9,8 +9,8 @@ end
 
 get "/" do
   settings.scheduler.in '10s' do
-    puts "Backing up uploads"
-    system("bash scripts/uploads.sh")
+    puts "Backing up databases"
+    system("bash scripts/dbs.sh")
   end
 
   "Hi!!!"

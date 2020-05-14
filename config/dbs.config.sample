@@ -1,0 +1,6 @@
+ips=(XXX YYY ZZZ)
+ports=(XXX YYY ZZZ)
+users=(XXX YYY ZZZ)
+passes=(XXX YYY ZZZ)
+
+databases=(XXX YYY ZZZ)
