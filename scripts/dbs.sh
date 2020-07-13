@@ -11,10 +11,10 @@ do
 
   # An argument that may be needed with a mysqldump upgrade is:
   # --column-statistics=0
-  mkdir -p "./$ip/dbs"
+  mkdir -p "./public/backup/$ip/dbs"
 
   for db in $current_databases
   do
-    ssh root@$host "mysqldump -h $ip -P $port -u $user --password=$pass --databases $db" > "./$ip/dbs/$db-`date +%s`.sql"
+    ssh root@$host "mysqldump -h $ip -P $port -u $user --password=$pass --databases $db" > "./public/backup/$ip/dbs/$db-`date +%s`.sql"
   done
 done

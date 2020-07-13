@@ -59,3 +59,4 @@ build-iPhoneSimulator/
 # Start of custom rules
 
 *.config
+public/backup

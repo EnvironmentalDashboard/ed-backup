@@ -5,6 +5,8 @@ require "date"
 
 require "rufus-scheduler"
 
+require "./tree.rb"
+
 def all_scripts
   puts "Backing up databases"
   system("bash scripts/dbs.sh")
@@ -22,7 +24,9 @@ configure do
 end
 
 get "/" do
+  @files_html = FileTree.new('./public/backup').to_html
   @times = settings.scheduler.jobs.map(&:next_time).map(&:to_i).map { |t| Time.at(t).to_datetime } .sort
+
   erb :index
 end
 
