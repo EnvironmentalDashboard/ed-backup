@@ -1,0 +1,11 @@
+<h2>Upcoming backups:</h2>
+
+<ul>
+  <% @times.each do |t| %>
+    <li><%= t %></li>
+  <% end %>
+</ul>
+
+<button type="button" id="schedule">Backup in a minute</button>
+
+<script src="js/button.js"></script>
