@@ -5,6 +5,9 @@ GEM
     concurrent-ruby (1.1.6)
     et-orbi (1.2.4)
       tzinfo
+    ffi (1.13.1)
+    free_disk_space (1.0.0)
+      sys-filesystem
     fugit (1.3.5)
       et-orbi (~> 1.1, >= 1.1.8)
       raabro (~> 1.1)
@@ -30,6 +33,8 @@ GEM
       rack-protection (= 2.0.8.1)
       sinatra (= 2.0.8.1)
       tilt (~> 2.0)
+    sys-filesystem (1.3.4)
+      ffi
     tilt (2.0.10)
     tzinfo (2.0.2)
       concurrent-ruby (~> 1.0)
@@ -38,6 +43,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  free_disk_space
   rufus-scheduler
   sinatra
   sinatra-contrib

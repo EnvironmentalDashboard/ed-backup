@@ -21,6 +21,8 @@ RUN chmod 600 /root/.ssh/id_rsa
 RUN touch /root/.ssh/known_hosts
 RUN ssh-keyscan ${HOST} >> /root/.ssh/known_hosts
 
+RUN mkdir -p /usr/src/app/public/backup
+
 EXPOSE 4567
 
 CMD ["ruby", "./server.rb", "-o", "0.0.0.0"]
