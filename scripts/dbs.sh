@@ -15,6 +15,6 @@ do
 
   for db in $current_databases
   do
-    ssh root@$host "mysqldump -h $ip -P $port -u $user --password=$pass --databases $db" > "./$ip/dbs/$db.sql"
+    ssh root@$host "mysqldump -h $ip -P $port -u $user --password=$pass --databases $db" > "./$ip/dbs/$db-`date +%s`.sql"
   done
 done
