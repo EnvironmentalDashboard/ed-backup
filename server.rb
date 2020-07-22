@@ -9,8 +9,11 @@ require "free_disk_space"
 require "./tree.rb"
 
 def all_scripts
-  puts "Backing up databases"
+  puts "Backing up SQL databases"
   system("bash scripts/dbs.sh")
+
+  puts "Backing up Mongo databases"
+  system("bash scripts/mongo.sh")
 
   puts "Backing up uploads"
   system("bash scripts/uploads.sh")

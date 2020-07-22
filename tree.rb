@@ -13,11 +13,16 @@ class FileTree
     @hash.to_json
   end
 
-  def to_html(hash=@hash)
+  def to_html(hash = @hash)
     html = ""
     if hash
       hash.each do |key, val|
-        html << "<li>" << key << "</li>"
+        html << "<li>" \
+          << "<a href='#{val['full_path'].sub('./public', '')}'>" \
+            << key \
+          << "</a>" \
+          << "</li>"
+          
         if val["children"]
           html << "<ul>"
           html << self.to_html(val["children"])
