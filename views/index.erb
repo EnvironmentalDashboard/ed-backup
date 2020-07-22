@@ -1,0 +1,19 @@
+<p><%= @space_left %> GB left</p>
+
+<h2>Upcoming backups:</h2>
+
+<ul>
+  <% @times.each do |t| %>
+    <li><%= t %></li>
+  <% end %>
+</ul>
+
+<button type="button" id="schedule">Backup in a minute</button>
+
+<script src="js/button.js"></script>
+
+<h2>Existing Backups</h2>
+
+<ul>
+  <%= @files_html %>
+</ul>
