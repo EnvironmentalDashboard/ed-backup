@@ -1,4 +1,3 @@
-. host.config
 . config/mongo.config
 
 for ((i = 0; i < ${#uris[@]}; ++i))
@@ -9,5 +8,5 @@ do
   name=${names[i]}
 
   mkdir -p "./public/backup/$name/mongo"
-  ssh root@$host "mongodump --uri=$uri --gzip --archive" > "./public/backup/$name/mongo/`date +%s`.gz"
+  mongodump --uri=$uri --gzip --archive > "./public/backup/$name/mongo/`date +%s`.gz"
 done

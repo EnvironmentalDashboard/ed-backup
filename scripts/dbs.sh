@@ -1,4 +1,3 @@
-. host.config
 . config/dbs.config
 
 for ((i = 0; i < ${#ips[@]}; ++i))
@@ -15,6 +14,6 @@ do
 
   for db in $current_databases
   do
-    ssh root@$host "mysqldump -h $ip -P $port -u $user --password=$pass --databases $db" > "./public/backup/$ip/dbs/$db-`date +%s`.sql"
+    mysqldump -h $ip -P $port -u $user --password=$pass --databases $db > "./public/backup/$ip/dbs/$db-`date +%s`.sql"
   done
 done
